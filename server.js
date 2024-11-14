@@ -6,10 +6,10 @@ const uploadRoutes = require("./routes/upload");
 const connectDB = require("./config/db");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4040;
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 app.use("/api/stripe", stripeRoutes);
 app.use("/api/upload", uploadRoutes);
 
